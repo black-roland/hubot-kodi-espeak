@@ -1,0 +1,11 @@
+{
+  "name": "hubot-kodi-espeak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.coffee",
+  "dependencies": {
+    "bluebird": "^2.9.33",
+    "espeak": "^0.0.3"
+  },
+  "devDependencies": {}
+}
