@@ -9,8 +9,8 @@
 #   HUBOT_KODI_URL
 #   HUBOT_KODI_USER
 #   HUBOT_KODI_PASSWORD
-#   HUBOT_ESPEAK_URL (optional, defaults "http://{EXPRESS_USER}:{EXPRESS_PASSWORD}@localhost:{EXPRESS_PORT}")
-#   HUBOT_ESPEAK_VOICE (optional, defaults "en")
+#   HUBOT_ESPEAK_URL
+#   HUBOT_ESPEAK_VOICE
 #
 # Commands:
 #   hubot say <text> - speak <text> using Kodi speakers
