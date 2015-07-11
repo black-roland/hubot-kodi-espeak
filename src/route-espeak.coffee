@@ -1,5 +1,6 @@
 Promise = require 'bluebird'
 espeak = Promise.promisifyAll require 'espeak'
+robot = require '../src/kodi-espeak'
 
 module.exports = (req, res) ->
     res.set 'Content-Type', 'audio/wav';
