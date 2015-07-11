@@ -1,6 +1,6 @@
 {
   "name": "hubot-kodi-espeak",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Speaks any text using Kodi and eSpeak",
   "homepage": "https://github.com/black-roland/hubot-kodi-espeak",
   "author": "Black Roland (https://github.com/black-roland)",
