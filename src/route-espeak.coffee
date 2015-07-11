@@ -1,8 +1,7 @@
-Promise = require('bluebird')
-espeak = Promise.promisifyAll(require('espeak'))
+Promise = require 'bluebird'
+espeak = Promise.promisifyAll require 'espeak'
 
-module.exports = (robot) ->
-  robot.router.get '/kodi-say/:voice/:text', (req, res) ->
+module.exports = (req, res) ->
     res.set 'Content-Type', 'audio/wav';
 
     espeak.speakAsync(req.params.text, ["-v#{ req.params.voice }"])
