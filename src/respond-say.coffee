@@ -4,7 +4,9 @@ robot = require './robot'
 if process.env.HUBOT_ESPEAK_URL
   espeakUri = process.env.HUBOT_ESPEAK_URL.replace(/\/$/, '')
 else
-  espeakUri = "http://localhost:#{ process.env.EXPRESS_PORT or process.env.PORT }"
+  if process.env.EXPRESS_USER and process.env.EXPRESS_PASSWORD
+    cred = "#{ process.env.EXPRESS_USER }:#{ process.env.EXPRESS_PASSWORD }@"
+  espeakUri = "http://#{ cred or '' }@localhost:#{ process.env.EXPRESS_PORT or process.env.PORT }"
   robot.logger.info "Using default eSpeak URL: #{ espeakUri }/"
 
 espeakVoice = process.env.HUBOT_ESPEAK_VOICE or 'en'
