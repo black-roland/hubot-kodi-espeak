@@ -1,5 +1,5 @@
 kodi = require '../lib/kodi'
-robot = require './robot'
+robot = require './kodi-espeak'
 
 if process.env.HUBOT_ESPEAK_URL
   espeakUri = process.env.HUBOT_ESPEAK_URL.replace(/\/$/, '')

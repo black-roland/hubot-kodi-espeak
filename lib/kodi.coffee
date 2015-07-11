@@ -1,4 +1,4 @@
-robot = require '../src/robot'
+robot = require '../src/kodi-espeak'
 Promise = require 'bluebird'
 
 kodiUri = process.env.HUBOT_KODI_URL.replace(/\/$/, '') if process.env.HUBOT_KODI_URL
