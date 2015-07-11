@@ -1,9 +1,11 @@
 robot = require '../src/kodi-espeak'
 Promise = require 'bluebird'
+url = require 'url'
 
-kodiUri = process.env.HUBOT_KODI_URL.replace(/\/$/, '') if process.env.HUBOT_KODI_URL
-kodiUser = process.env.HUBOT_KODI_USER
-kodiPassword = process.env.HUBOT_KODI_PASSWORD
+if process.env.HUBOT_KODI_URL
+  urlParts = url.parse process.env.HUBOT_KODI_URL
+  kodiUri = "#{ urlParts.protocol }//#{ urlParts.host }"
+  [ kodiUser, kodiPassword ] = urlParts.auth.split(':') if urlParts.auth
 
 kodiRequest = (method, params) ->
   new Promise (resolve, reject) ->
