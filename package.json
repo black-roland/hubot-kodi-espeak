@@ -19,5 +19,10 @@
     "bluebird": "^2.9.33",
     "espeak": "^0.0.3"
   },
-  "devDependencies": {}
+  "peerDependencies": {
+    "hubot": ">=2.13.2"
+  },
+  "devDependencies": {
+    "coffee-script": ">=1.9.3"
+  }
 }
