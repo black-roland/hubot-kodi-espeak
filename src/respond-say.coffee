@@ -1,8 +1,11 @@
 kodi = require '../lib/kodi'
+robot = require './robot'
 
-espeakUri = if process.env.HUBOT_ESPEAK_URL
-then process.env.HUBOT_ESPEAK_URL.replace(/\/$/, '')
-else "http://localhost:#{ process.env.EXPRESS_PORT or process.env.PORT }"
+if process.env.HUBOT_ESPEAK_URL
+  espeakUri = process.env.HUBOT_ESPEAK_URL.replace(/\/$/, '')
+else
+  espeakUri = "http://localhost:#{ process.env.EXPRESS_PORT or process.env.PORT }"
+  robot.logger.info "Using default eSpeak URL: #{ espeakUri }/"
 
 espeakVoice = process.env.HUBOT_ESPEAK_VOICE or 'en'
 
