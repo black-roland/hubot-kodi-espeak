@@ -1,5 +1,6 @@
 kodi = require '../lib/kodi'
 robot = require './kodi-espeak'
+querystring = require 'querystring'
 
 if process.env.HUBOT_ESPEAK_URL
   espeakUri = process.env.HUBOT_ESPEAK_URL.replace(/\/$/, '')
@@ -13,7 +14,11 @@ espeakVoice = process.env.HUBOT_ESPEAK_VOICE or 'en'
 
 module.exports = (res) ->
   text = res.match[1];
-  kodi.play("#{ espeakUri }/kodi-say/#{ espeakVoice }/#{ text }")
+
+  speechUrl = "#{ espeakUri }/kodi-say/#{ espeakVoice }/#{ querystring.escape text }"
+  robot.logger.debug "Kodi eSpeak URL: #{ speechUrl }"
+
+  kodi.play(speechUrl)
     .then () ->
       res.reply text
     .catch (err) ->
