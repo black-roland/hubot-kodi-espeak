@@ -10,6 +10,7 @@
     "kodi",
     "espeak"
   ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/black-roland/hubot-kodi-espeak.git"
